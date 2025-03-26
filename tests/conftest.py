@@ -1,5 +1,8 @@
+from select import select
 from selenium import webdriver
 import pytest
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.select import Select
 
 from utilities import Readconfigurations
 
@@ -22,5 +25,8 @@ def setup_and_teardown(request):
     driver.maximize_window()
     driver.implicitly_wait(10)
     driver.get(url)
+    # element = driver.find_element(By.XPATH,"sdjfhdsj")
+    # opt = Select(element)
+    # opt.se
     yield driver
     driver.quit()

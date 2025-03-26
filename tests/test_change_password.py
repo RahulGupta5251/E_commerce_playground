@@ -16,5 +16,5 @@ class Test_changepassword:
         change_password.enter_change_passowrd("Rahul221@")
         change_password.enter_change_confirm_passowrd("Rahul221@")
         change_password.click_continue_button_change_password()
-        expected_change_password_sucess_msg_text = " Success: Your password has been successfully updated."
+        # expected_change_password_sucess_msg_text = " Success: Your password has been successfully updated."
         # assert account_page.change_password_success_msg_text().__eq__(expected_change_password_sucess_msg_text)

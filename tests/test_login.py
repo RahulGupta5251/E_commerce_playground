@@ -25,7 +25,7 @@ class Test_login:
         login_page = Loginpage(self.driver)
         login_page.enter_my_account_menu()
         login_page.select_login_option()
-        login_page.select_register_option()
+        login_page.select_register_button()
         login_page.enter_login_credentials("Rahulgupta5251@gmail.com","1234567890")
         expected_warning_failed_msg = " Warning: No match for E-Mail Address and/or Password."
         login_page.retrive_failed_login_msg_element().__eq__(expected_warning_failed_msg)
@@ -35,7 +35,7 @@ class Test_login:
         login_page = Loginpage(self.driver)
         login_page.enter_my_account_menu()
         login_page.select_login_option()
-        login_page.select_register_option()
+        login_page.select_register_button()
         login_page.enter_login_credentials("51@gmail.com","Rahul221@")
         expected_warning_failed_msg = " Warning: No match for E-Mail Address and/or Password."
         login_page.retrive_failed_login_msg_element().__eq__(expected_warning_failed_msg)
