@@ -12,12 +12,13 @@ class Accountpage(Basepage):
     change_your_password_button_xpath = "//*[@id='content']/div[1]/div/div/div[2]/a"
     modify_your_addres_book_xpath = "//*[@id='content']/div[1]/div/div/div[3]/a"
     modify_your_wish_list_xpath = "//*[@id='content']/div[1]/div/div/div[4]/a"
+    subscribe_newsletter_xpath = "//*[@id='content']/div[1]/div/div/div[5]/a"
 
     ##########Success x path ########
     my_account_success_xpath = "//*[@id='content']/div[1]/h2"
     edit_account_success_msg_xpath = "//*[@id='account-account']/div[1]"
     change_password_success_msg_xpath = "//*[text()= ' Success: Your password has been successfully updated.']"
-
+    newsletter_subscription_success_msg_xpath = "//*[@id='account-account']/div[1]"
     def retrive_my_account_success_element(self):
         return self.driver.find_element(By.XPATH,self.my_account_success_xpath).text
 
@@ -31,6 +32,9 @@ class Accountpage(Basepage):
     def click_modify_wish_list(self):
         self.click_on_element("modify_your_wish_list_xpath",self.modify_your_wish_list_xpath)
 
+    def click_subscribe_button(self):
+        self.click_on_element("subscribe_newsletter_xpath",self.subscribe_newsletter_xpath)
+
     def click_change_your_password_btn(self):
         self.click_on_element("change_your_password_button_xpath",self.change_your_password_button_xpath)
 
@@ -39,3 +43,5 @@ class Accountpage(Basepage):
 
     def change_password_success_msg_text(self):
         return self.get_element("change_password_success_msg_xpath",self.change_password_success_msg_xpath).text
+    def retrive_newsletter_subscription_success_msg_text(self):
+        return  self.get_element("newsletter_subscription_success_msg_xpath",self.newsletter_subscription_success_msg_xpath).text
