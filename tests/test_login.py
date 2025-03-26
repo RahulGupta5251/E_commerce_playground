@@ -39,3 +39,10 @@ class Test_login:
         login_page.enter_login_credentials("51@gmail.com","Rahul221@")
         expected_warning_failed_msg = " Warning: No match for E-Mail Address and/or Password."
         login_page.retrive_failed_login_msg_element().__eq__(expected_warning_failed_msg)
+
+    def test_login_and_logout_of_account(self):
+        self.test_login_with_valid_credentials()
+        accountpage = Accountpage(self.driver)
+        accountpage.click_logot_button()
+        expected_logout_success_msg = " Account Logout"
+        accountpage.validatelogout_successfully_text().__eq__(expected_logout_success_msg)
